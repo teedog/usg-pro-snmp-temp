@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ $# != 2 ] ; then
+  echo "Usage: $0 [-g|-n] OID"
+  exit 0
+fi
+TEMP=`sudo /usr/sbin/ubnt-hal getTemp | grep -Po "\(CPU\):\K[0-9][0-9]"`
+
+echo $2
+echo integer
+echo $TEMP
+
